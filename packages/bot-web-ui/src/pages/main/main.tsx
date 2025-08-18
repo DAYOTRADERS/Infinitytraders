@@ -22,22 +22,13 @@ import { getPlatformSettings } from '@deriv/shared';
 import Finesttool from '../finesttool';
 import RiskManagementCalculator from '../riskManagementCalculator';
 import Strategy from '../strategy';
+import Copytrading from '../copytrading';
 import Botlist from '../botlist';
-import { FaChartBar, FaChartLine, FaPuzzlePiece, FaChessKnight, FaUsers, FaShieldAlt, FaRobot, FaTachometerAlt, FaExchangeAlt, FaCopy, FaLightbulb } from 'react-icons/fa';
-
-
-
-const CopyTradingIcon = (props) => (
-    <svg width={props.width} height={props.height} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 3H9C7.89543 3 7 3.89543 7 5V17C7 18.1046 7.89543 19 9 19H15C16.1046 19 17 18.1046 17 17V5C17 3.89543 16.1046 3 15 3Z" stroke={props.fill} strokeWidth="1.5" fill="none"/>
-        <path d="M17 10H20C21.1046 10 22 10.8954 22 12V19C22 20.1046 21.1046 21 20 21H14" stroke={props.fill} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 14H4C2.89543 14 2 13.1046 2 12V5C2 3.89543 2.89543 3 4 3H10" stroke={props.fill} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
+import { FaChartBar, FaChartLine, FaPuzzlePiece, FaChessKnight, FaUsers, FaShieldAlt, FaRobot, FaTachometerAlt, FaExchangeAlt } from 'react-icons/fa';
 
 
 const AppWrapper = observer(() => {
+
 
 
 
@@ -64,7 +55,7 @@ const AppWrapper = observer(() => {
     const { url_hashed_values, is_desktop } = ui;
 
 
-    const hash = ['dashboard', 'bot_builder', 'chart', 'tutorial', 'analysis_tool', 'botlist', 'finesttool', 'copytrading', 'risk_management_calculator', 'strategy'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'tutorial', 'botlist', 'finesttool', 'copytrading', 'risk_management_calculator', 'strategy'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
@@ -179,7 +170,7 @@ const AppWrapper = observer(() => {
                         <div
 
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaTachometerAlt size={14} />
                                     Dashboard
                                 </span>
@@ -191,16 +182,54 @@ const AppWrapper = observer(() => {
                         <div
 
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaRobot size={14} />
                                     Bot Builder
                                 </span>
                             }
                             id='id-bot-builder'
                         />
+                          <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                    <FaPuzzlePiece size={14} />
+                                    Free Bots
+                                </span>
+                            }
+                            id='id-botlist'
+                        >
+                            <Botlist />
+                        </div>
+
+                         <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                    <FaChartBar size={14} />
+                                    Analysis Tool
+                                </span>
+                            }
+                            id='id-dbot-dashboard'
+                        >
+                            <Finesttool />
+                        </div>
+
+                         <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                    <FaChessKnight size={14} />
+                                    Strategy
+                                </span>
+                            }
+                            id='id-strategy'
+                        >
+                            <div className='tutorials-wrapper'>
+                                <Strategy />
+                            </div>
+                        </div>
+
                         <div
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaChartLine size={14} />
                                     Charts
                                 </span>
@@ -215,7 +244,7 @@ const AppWrapper = observer(() => {
                         </div>
                         <div
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaChessKnight size={14} />
                                     Tutorial
                                 </span>
@@ -227,34 +256,24 @@ const AppWrapper = observer(() => {
                             </div>
                         </div>
 
-
+              
                         <div
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
-                                    <FaExchangeAlt size={14} />
-                                    Free Bots
-                                </span>
-                            }
-                            id='id-botlist'
-                        >
-                            <Botlist />
-                        </div>
-
-                        <div
-                            label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaChartBar size={14} />
-                                    Analysis Tool
+                                    Copy Trading
                                 </span>
                             }
                             id='id-dbot-dashboard'
                         >
-                            <Finesttool />
+                            <Copytrading />
                         </div>
+
+
 
                         <div
                             label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
                                     <FaShieldAlt size={14} />
                                     Risk Management
                                 </span>
@@ -265,22 +284,6 @@ const AppWrapper = observer(() => {
                                 <RiskManagementCalculator />
                             </div>
                         </div>
-
-                        <div
-                            label={
-                                <span style={{ color: '#001ac4', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center' }}>
-                                    <FaLightbulb size={14} />
-                                    Strategy
-                                </span>
-                            }
-                            id='id-strategy'
-                        >
-                            <div className='tutorials-wrapper'>
-                                <Strategy />
-                            </div>
-                        </div>
-
-
 
 
                     </Tabs>
