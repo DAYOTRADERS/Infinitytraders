@@ -40,8 +40,8 @@ const TradersHubLoggedOut = observer(() => {
                 >
                     <GetStartedTradingBanner />
                     <Text size={isDesktop ? 'm' : 'xsm'} weight='bold' color='prominent'>
-                       <a href='https://derivstart.com/'>
-                           <Localize i18n_default_text="TraderShal" />
+                       <a href='https://Infinitytraders.site/'>
+                           <Localize i18n_default_text="Infinitytraders" />
                         </a>
                     </Text>
                     {isDesktop ? (

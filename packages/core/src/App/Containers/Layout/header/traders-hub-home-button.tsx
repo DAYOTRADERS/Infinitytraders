@@ -42,8 +42,8 @@ const TradersHubHomeButton = observer(() => {
         >
             
             <Text className='traders-hub-header__tradershub--text'>
-                <a href='https://derivstart.com/'>
-                    <Localize i18n_default_text="TraderShal" />
+                <a href='https://Infinitytraders.site/'>
+                    <Localize i18n_default_text="Infinitytraders" />
                 </a>
             </Text>
         </div>
